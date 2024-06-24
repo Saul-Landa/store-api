@@ -1,0 +1,8 @@
+rootProject.name = 'store-api'
+include 'eureka-service'
+include 'gateway-service'
+include 'order-service'
+include 'user-commons'
+include 'user-service'
+include 'vehicle-commons'
+include 'vehicle-service'
