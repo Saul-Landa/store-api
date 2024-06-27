@@ -83,9 +83,10 @@ public class OrderService implements IOrderService {
             LocalDateTime currentTime = LocalDateTime.now();
             LocalDateTime creationTime = order.getDateCreated().toInstant().atZone(ZoneId.systemDefault()).toLocalDateTime();
             Duration duration = Duration.between(creationTime, currentTime);
-            long minutesPassed = duration.toMinutes();
+            long minutesPassed = duration.toSeconds();
+            System.out.println(minutesPassed);
 
-            if ( minutesPassed > 10 ) throw new Exception("More than 10 minutes have already passed.");
+            if ( minutesPassed > 30 ) throw new Exception("More than 30 seconds have already passed.");
 
             return true;
         } catch (Exception exception) {
